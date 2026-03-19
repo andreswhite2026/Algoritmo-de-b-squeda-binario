@@ -1,0 +1,27 @@
+def busqueda_binaria(lista, objetivo):
+    inicio = 0
+    fin = len(lista) - 1
+    
+    while inicio <= fin:
+        medio = (inicio + fin) // 2
+        
+        if lista[medio] == objetivo:
+            return medio
+        elif lista[medio] < objetivo:
+            inicio = medio + 1
+        else:
+            fin = medio - 1
+    
+    return -1
+
+
+# Ejemplo
+numeros = [2, 3, 5, 7, 8, 10]  # IMPORTANTE: ordenados
+buscar = 7
+
+resultado = busqueda_binaria(numeros, buscar)
+
+if resultado != -1:
+    print("Elemento encontrado en la posición:", resultado)
+else:
+    print("Elemento no encontrado")
